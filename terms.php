@@ -20,17 +20,17 @@ $domainTitle = ucwords(str_replace('-', ' ', $domainSlug));
     <title>
         <?= $domainTitle ?> — Экспертный консалтинг и стратегии роста
     </title>
-<link rel="icon"
-    href="data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23635BFF;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%230A2540;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M4 16H9L12 6L18 26L21 16H28' stroke='url(%23grad)' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='28' cy='16' r='3' fill='%23635BFF' /%3E%3C/svg%3E"
-    type="image/svg+xml">
+
+<link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='2' y='2' width='22' height='22' fill='%230d0d0d' stroke='%23ffffff' stroke-width='3'/%3E%3Crect x='8' y='8' width='22' height='22' fill='%230d0d0d' stroke='%2300ff66' stroke-width='3'/%3E%3C/svg%3E">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Manrope:wght@500;800&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Syne:wght@700;800&display=swap"
         rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
     <script src="https://unpkg.com/lucide@latest"></script>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -39,44 +39,46 @@ $domainTitle = ucwords(str_replace('-', ' ', $domainSlug));
     <header class="header">
         <div class="container header__container">
             <a href="./#hero" class="logo">
-                <span class="logo__icon"></span>
                 <span class="logo__text">
                     <?= $domainTitle ?>
                 </span>
             </a>
 
-            <nav class="nav">
+            <nav class="nav" id="nav">
                 <ul class="nav__list">
                     <li><a href="./#hero" class="nav__link">Главная</a></li>
-                    <li><a href="./#strategies" class="nav__link">Стратегии</a></li>
-                    <li><a href="./#expertise" class="nav__link">Экспертиза</a></li>
-                    <li><a href="./#insights" class="nav__link">Инсайты</a></li>
-                    <li><a href="./#reviews" class="nav__link">Отзывы</a></li>
+                    <li><a href="./#services" class="nav__link">Услуги</a></li>
+                    <li><a href="./#cases" class="nav__link">Кейсы</a></li>
+                    <li><a href="./#team" class="nav__link">Команда</a></li>
+                    <li><a href="./#blog" class="nav__link">Блог</a></li>
                 </ul>
             </nav>
 
-            <a href="./#contact" class="btn btn--outline header__cta">Связаться</a>
-
-            <button class="burger" aria-label="Menu">
-                <span></span>
-            </button>
+            <div class="header__actions">
+                <a href="./#contact" class="btn btn--primary">
+                    Связаться
+                </a>
+                <button class="burger" id="burger" aria-label="Menu">
+                    <span></span>
+                </button>
+            </div>
         </div>
     </header>
-
 <main>
     <section class="pages">
         <div class="container">
-            <h1>Условия использования</h1>
+            <h1 class="section-title">Условия использования</h1>
 
-            <p>
+            <p class="pages__intro">
                 Добро пожаловать на сайт <strong><?= $domainTitle ?></strong>! Настоящие Условия использования
                 (далее — «Условия» или «Соглашение») представляют собой юридически
                 обязывающий договор между вами (далее — «Пользователь») и <strong><?= $domainTitle ?></strong>
                 (далее — «Компания», «мы», «нас»). Пожалуйста, внимательно
-                ознакомьтесь с ними. Используя наш сайт и любые связанные с ним
-                услуги, вы подтверждаете свое полное и безоговорочное согласие с
-                данными Условиями. Если вы не согласны, вы должны немедленно
-                прекратить использование сайта.
+                ознакомьтесь с ними.
+            </p>
+
+            <p>
+                Используя наш сайт и любые связанные с ним услуги, вы подтверждаете свое полное и безоговорочное согласие с данными Условиями. Если вы не согласны, вы должны немедленно прекратить использование платформы.
             </p>
 
             <h2>1. Предмет Соглашения</h2>
@@ -97,8 +99,7 @@ $domainTitle = ucwords(str_replace('-', ' ', $domainSlug));
             <ul>
                 <li>
                     Публиковать, передавать или распространять любую информацию,
-                    которая является незаконной, вредоносной, клеветнической,
-                    нарушает авторские права или разжигает ненависть.
+                    которая является незаконной, вредоносной, клеветнической или нарушает авторские права.
                 </li>
                 <li>
                     Предпринимать любые действия, которые могут нарушить нормальную
@@ -107,12 +108,11 @@ $domainTitle = ucwords(str_replace('-', ' ', $domainSlug));
                 </li>
                 <li>
                     Использовать автоматизированные скрипты (ботов) для сбора
-                    информации или иного взаимодействия с сайтом без нашего
-                    предварительного письменного разрешения.
+                    информации без нашего предварительного письменного разрешения.
                 </li>
                 <li>
                     Выдавать себя за другое лицо или предоставлять недостоверную
-                    информацию о себе при регистрации на консультацию.
+                    информацию о себе при запросе экспертной поддержки.
                 </li>
             </ul>
 
@@ -120,77 +120,66 @@ $domainTitle = ucwords(str_replace('-', ' ', $domainSlug));
             <p>
                 Весь контент, размещенный на сайте <strong><?= $fullDomain ?></strong>, включая тексты, графику,
                 изображения, видео, логотипы и программный код (далее — «Контент»), является объектом интеллектуальной
-                собственности Компании или ее партнеров. Вам предоставляется ограниченная
-                лицензия на доступ и использование Контента в личных целях для профессионального развития. 
-                Любое копирование, воспроизведение или распространение Контента без предварительного 
-                письменного разрешения правообладателя строго запрещено.
+                собственной Компании или ее партнеров. Вам предоставляется ограниченная
+                лицензия на использование Контента в личных целях для профессионального развития. 
+                Любое копирование или распространение Контента без разрешения строго запрещено.
             </p>
 
-            <h2>4. Ограничение ответственности и отказ от гарантий</h2>
+            <h2>4. Ограничение ответственности</h2>
             <p>
-                Услуги и все материалы на сайте предоставляются по принципу «как
-                есть» (as is). Мы не даем никаких гарантий, что сайт будет работать бесперебойно, 
-                без ошибок или что его контент является абсолютно точным в контексте динамически 
-                меняющегося рынка в Германии и странах ЕС.
+                Услуги и все материалы на сайте предоставляются по принципу «как есть» (as is). Мы не даем никаких гарантий, что сайт будет работать бесперебойно или что его контент является абсолютно точным в контексте динамически меняющегося рынка в Германии и странах ЕС.
             </p>
             <p>
-                Компания не несет ответственности за любые прямые или косвенные
-                убытки, которые могут возникнуть у Пользователя в результате использования 
-                или невозможности использования платформы <strong><?= $domainTitle ?></strong>. 
-                Это также относится к любому контенту сторонних ресурсов, ссылки на которые 
-                могут быть размещены на нашем сайте.
+                Компания не несет ответственности за любые прямые или косвенные убытки, возникшие в результате использования или невозможности использования платформы <strong><?= $domainTitle ?></strong>. 
             </p>
 
-            <h2>5. Изменения в Условиях использования</h2>
+            <h2>5. Изменения в Условиях</h2>
             <p>
-                Мы оставляем за собой право в любое время изменять или дополнять настоящие Условия. 
-                Все изменения вступают в силу с момента их публикации на этой странице. 
-                Ваше дальнейшее использование сайта <strong><?= $fullDomain ?></strong> после внесения 
-                изменений означает ваше автоматическое согласие с новой редакцией Условий.
+                Мы оставляем за собой право в любое время изменять или дополнять настоящие Условия. Все изменения вступают в силу с момента их публикации на этой странице. Ваше дальнейшее использование сайта <strong><?= $fullDomain ?></strong> означает ваше автоматическое согласие с новой редакцией Условий.
             </p>
 
             <h2>6. Разрешение споров</h2>
             <p>
-                Все споры и разногласия стороны будут стремиться разрешить путем конструктивных переговоров.
-                В случае если согласие не будет достигнуто, спор подлежит рассмотрению в соответствии 
-                с действующим законодательством по месту регистрации Компании в <strong>Германии</strong>.
+                Все споры и разногласия стороны будут стремиться разрешить путем конструктивных переговоров. В случае если согласие не будет достигнуто, спор подлежит рассмотрению в соответствии с действующим законодательством по месту регистрации Компании в <strong>Германии</strong>.
             </p>
 
-            <h2>7. Контактная информация</h2>
-            <p>
-                Если у вас возникли вопросы, связанные с настоящими Условиями,
-                пожалуйста, свяжитесь с нами по электронной почте:
-                <br><br>
-                Email: <a href="mailto:hello@<?= $fullDomain ?>">hello@<?= $fullDomain ?></a><br>
-                Телефон: <a href="tel:+390697639457">+390697639457</a>
-            </p>
+            <div class="contact-extra" style="margin-top: 50px;">
+                <h2>7. Контактная информация</h2>
+                <p>
+                    Если у вас возникли вопросы, связанные с настоящими Условиями, пожалуйста, свяжитесь с нами:
+                </p>
+                <p>
+                    <strong>Email:</strong> <a href="mailto:office@<?= $fullDomain ?>" class="accent-link">office@<?= $fullDomain ?></a><br>
+                    <strong>Телефон:</strong> <a href="tel:+390697895210" class="accent-link">+39 069 7895210</a><br>
+                    <strong>Адрес:</strong> Friedrichstraße 171, 10117 Berlin, Germany
+                </p>
+            </div>
         </div>
     </section>
 </main>
 
 
-
-
-     <footer class="footer">
+    <footer class="footer">
         <div class="container footer__grid">
             <div class="footer__col">
-                <a href="./#hero" class="logo footer__logo">
-                    <span class="logo__icon"></span>
+                <a href="./#hero" class="logo logo--footer">
                     <span class="logo__text">
                         <?= $domainTitle ?>
                     </span>
                 </a>
-                <p class="footer__description">Технологии нового поколения для вашего бизнеса. Переосмыслите подход к
-                    развитию вместе с экспертной поддержкой.</p>
+                <p class="footer__description">
+                    Решения, которые меняют правила игры. Ваш проверенный партнер в мире цифровой трансформации и
+                    стратегического консалтинга.
+                </p>
             </div>
 
             <div class="footer__col">
                 <h4 class="footer__title">Навигация</h4>
                 <ul class="footer__links">
                     <li><a href="./#hero">Главная</a></li>
-                    <li><a href="./#strategies">Стратегии</a></li>
-                    <li><a href="./#expertise">Экспертиза</a></li>
-                    <li><a href="./#insights">Инсайты</a></li>
+                    <li><a href="./#services">Услуги</a></li>
+                    <li><a href="./#cases">Кейсы</a></li>
+                    <li><a href="./#blog">Блог</a></li>
                 </ul>
             </div>
 
@@ -209,46 +198,40 @@ $domainTitle = ucwords(str_replace('-', ' ', $domainSlug));
 
             <div class="footer__col">
                 <h4 class="footer__title">Контакты</h4>
-                <ul class="footer__contact">
-                    <li><i data-lucide="phone" class="icon-sm"></i> +390697639457</li>
-                    <li><i data-lucide="mail" class="icon-sm"></i> hello@
-                        <?= $fullDomain ?>
+                <ul class="footer__contact-info">
+                    <li>
+                        <i data-lucide="phone"></i>
+                        <a href="tel:+390697895210">+39 069 7895210</a>
                     </li>
-                    <li><i data-lucide="map-pin" class="icon-sm"></i> Kurfürstendamm 21, 10719 Berlin, Germany</li>
+                    <li>
+                        <i data-lucide="mail"></i>
+                        <a href="mailto:office@<?= $fullDomain ?>">office@
+                            <?= $fullDomain ?>
+                        </a>
+                    </li>
+                    <li>
+                        <i data-lucide="map-pin"></i>
+                        <span>Friedrichstraße 171, 10117 Berlin, Germany</span>
+                    </li>
                 </ul>
             </div>
         </div>
-        <div class="container footer__bottom">
+        <div class="footer__bottom container">
             <p>&copy; 2026
                 <?= $domainTitle ?>. Все права защищены. Предложение активно только в странах ЕС.
             </p>
         </div>
     </footer>
-<div class="mobile-menu">
-    <button class="mobile-menu__close"><i data-lucide="x"></i></button>
-    <ul class="mobile-menu__list">
-        <li><a href="./#hero" class="mobile-menu__link">Главная</a></li>
-        <li><a href="./#strategies" class="mobile-menu__link">Стратегии</a></li>
-        <li><a href="./#expertise" class="mobile-menu__link">Экспертиза</a></li>
-        <li><a href="./#insights" class="mobile-menu__link">Инсайты</a></li>
-        <li><a href="./#reviews" class="mobile-menu__link">Отзывы</a></li>
-        <li><a href="./#contact" class="btn btn--primary">Связаться</a></li>
-    </ul>
-</div>
-
 <div id="cookie-popup" class="cookie-popup">
     <div class="cookie-popup__content">
         <p>Этот сайт использует cookies для улучшения работы. Подробнее — в нашей <a href="./cookies.php">Cookie
                 политике</a>.</p>
-        <button id="cookie-accept" class="btn btn--accent-sm">Принять</button>
+        <button id="cookie-accept" class="btn btn--primary">Принять</button>
     </div>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script type="module" src="script.js"></script>    
- 
-    
+    <script src="script.js"></script>
 </body>
 
 </html>
